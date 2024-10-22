@@ -2,7 +2,7 @@
 
 ## 简介
 
-基于selenium和PySide6的淘宝网页信息爬虫gui程序，爬虫部分是课程作业，无gui文件是TB_selenium.py。gui部分在main.py。新手学习，有bug请多指教！
+基于selenium和PySide6的淘宝网页信息爬虫gui程序，爬虫部分是课程作业，无gui文件是TB_selenium.py。gui部分在main.py。在dist文件中有一个打包后的exe文件，可以玩一玩。新手学习，有bug请多指教！
 
 ## 功能
 
