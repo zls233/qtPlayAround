@@ -27,6 +27,7 @@ global_product_dict = {
 class LoadCookieThread(QThread):
     update_log = Signal(str)
     finished_load = Signal()
+    # error_load = Signal()
 
     def __init__(self, driver, cookie_file):
         super().__init__()
@@ -46,7 +47,9 @@ class LoadCookieThread(QThread):
             self.update_log.emit("Cookie加载成功！")
         except Exception as e:
             self.update_log.emit(f"Cookie加载失败: \n{str(e)}")
-            self.finished_load.emit()
+            # self.error_load.emit()
+        
+        self.finished_load.emit()
 
 
 class CrawlerThread(QThread):
@@ -331,10 +334,6 @@ class TaobaoCrawlerApp(QMainWindow):
 
     def first_login(self):
         # Selenium 操作
-        options = webdriver.EdgeOptions()
-        options.add_argument('--disable-blink-features=AutomationControlled')
-        self.driver = webdriver.Edge(options=options)
-
         self.driver.get("https://login.taobao.com/member/login.jhtml?spm=a21bo.jianhua/")
         self.log_message("请手动登录淘宝...")
         self.log_message("登录后请点击按钮继续。")
@@ -347,7 +346,6 @@ class TaobaoCrawlerApp(QMainWindow):
             json.dump(cookies, f)
         self.log_message("Cookies 已保存成功！")
         QMessageBox.information(self, "登录提示", "Cookies 已保存成功！点击'加载cookies'登录。")
-        self.driver.quit()
 
     def start_crawl(self):
         # 获取用户输入的关键词和页数
@@ -358,7 +356,8 @@ class TaobaoCrawlerApp(QMainWindow):
 
         self.load_cookie_thread = LoadCookieThread(self.driver, cookie_file)
         self.load_cookie_thread.update_log.connect(self.log_message)
-        self.load_cookie_thread.finished_load.connect(self.start_crawl_button.clicked)
+        self.load_cookie_thread.finished_load.connect(self.start_crawl_button.setEnabled)
+        # self.load_cookie_thread.error_load.connect(QMessageBox.warning(self, "登录提示", "登录失败！请检查cookie文件路径。\n如首次登录请点击'获取cookie'按钮。"))
         self.load_cookie_thread.start()
 
         if not self.driver:

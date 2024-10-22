@@ -2,7 +2,7 @@
 
 ## 简介
 
-基于selenium和PySide6的淘宝网页信息爬虫gui程序，爬虫部分是课程作业，gui部分是做着玩的。
+基于selenium和PySide6的淘宝网页信息爬虫gui程序，爬虫部分是课程作业，无gui文件是TB_selenium.py。gui部分在main.py。新手学习，有bug请多指教！
 
 ## 功能
 
@@ -40,6 +40,14 @@ pip install -r requirements.txt
 * 确保网络连接正常。
 * 由于程序涉及自动化操作，请合理使用爬虫，遵循相关法律法规。
 * 在使用时请确保你的行为不违反淘宝网站的相关规定。
+
+## 打包程序
+
+将程序打包成exe文件：
+
+```
+pyinstaller --onefile --windowed main.py
+```
 
 ## 许可证
 

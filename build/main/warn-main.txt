@@ -50,7 +50,7 @@ missing module named multiprocessing.BufferTooShort - imported by multiprocessin
 missing module named multiprocessing.AuthenticationError - imported by multiprocessing (top-level), multiprocessing.connection (top-level)
 missing module named asyncio.DefaultEventLoopPolicy - imported by asyncio (delayed, conditional), asyncio.events (delayed, conditional)
 missing module named trove_classifiers - imported by setuptools.config._validate_pyproject.formats (optional)
-missing module named pyimod02_importers - imported by E:\WebScraping\qtPlayAround\QT_TBParse\.conda\Lib\site-packages\PyInstaller\hooks\rthooks\pyi_rth_pkgutil.py (delayed), E:\WebScraping\qtPlayAround\QT_TBParse\.conda\Lib\site-packages\PyInstaller\hooks\rthooks\pyi_rth_pkgres.py (delayed)
+missing module named pyimod02_importers - imported by E:\WebScraping\qtPlayAround\.conda\Lib\site-packages\PyInstaller\hooks\rthooks\pyi_rth_pkgutil.py (delayed), E:\WebScraping\qtPlayAround\.conda\Lib\site-packages\PyInstaller\hooks\rthooks\pyi_rth_pkgres.py (delayed)
 missing module named pyodide - imported by urllib3.contrib.emscripten.fetch (top-level)
 missing module named js - imported by urllib3.contrib.emscripten.fetch (top-level)
 missing module named 'h2.events' - imported by urllib3.http2.connection (top-level)
