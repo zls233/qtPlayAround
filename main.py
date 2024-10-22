@@ -195,7 +195,7 @@ class TaobaoCrawlerApp(QMainWindow):
 
         font = QFont('微软雅黑')
 
-        self.title = QLabel("要你命3000淘宝商品爬取器V0.2.2", self)
+        self.title = QLabel("要你命3000淘宝商品爬取器V0.2.3", self)
         self.title.setStyleSheet("font-size: 30px; font-weight: bold;")
         self.title.setFont(font)
         Vlayout3.addWidget(self.title, alignment=Qt.AlignCenter)
