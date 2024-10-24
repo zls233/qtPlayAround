@@ -1,4 +1,4 @@
-# taobao-selenium-gui
+# taobao-selenium-PySide6-GUI
 
 ## 简介
 
